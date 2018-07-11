@@ -1,20 +1,19 @@
-package jms.queue;
+package jms.topic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
 /**
- * 消息提供者
+ * 主题模式-消息生产者
  *
  * @auther briarbear
  * @blog http://briarbear.github.io
- * @create 2018-07-10-23:11
+ * @create 2018-07-11-8:54
  */
 public class AppProducer {
-
     private static final String url = "tcp://192.168.24.128:61616";
-    private static final String queueName = "queue-test";
+    private static final String topicName = "topic-test";
 
 
     public static void main(String[] args) throws JMSException {
@@ -30,11 +29,11 @@ public class AppProducer {
         //4. 创建回话
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);//不启用事务 启动自动应答
 
-        //5. 创建目标或目的地
-        Destination destination = session.createQueue(queueName);
+        //5. 创建主题
+        Destination topic = session.createTopic(topicName);
 
         //6. 创建一个消息生成者
-        MessageProducer producer = session.createProducer(destination);
+        MessageProducer producer = session.createProducer(topic);
 
         for (int i = 0; i < 100; i++) {
             //7. 创建消息
