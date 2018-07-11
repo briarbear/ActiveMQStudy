@@ -15,4 +15,5 @@
 ## 目录说明
 - [队列模式的消息演示](/src/main/java/jms/queue)
 - [主题模式的消息演示](/src/main/java/jms/topic)
-- [Spring JMS](/src/main/java/spring)
+- [Spring Jms 队列模式](/src/main/java/spring/queue)
+- [Spring Jms 主题模式](/src/main/java/spring/topic)

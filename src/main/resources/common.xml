@@ -10,7 +10,7 @@
 
     <!--ActiveMQ为我们提供的ConnectFactory-->
     <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://192.168.24.128:61616"/>
+        <property name="brokerURL" value="tcp://192.168.159.132:61616"/>
     </bean>
 
     <!--spring-jms为我们提供的连接池-->
